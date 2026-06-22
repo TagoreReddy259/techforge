@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TechForge</title>
+  <meta name="description" content="Explore Microsoft AI, cybersecurity, data science, and Azure roadmaps rendered from a single data file." />
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-page="index">
+  <!--
+    Index page shell:
+    The page stays generic so all roadmaps can be rendered from data/roadmaps.js
+    without hardcoded content in the HTML.
+  -->
+  <header class="site-header site-header--home">
+    <a class="site-brand" href="#top" aria-label="Tech Career Roadmaps home">
+      <span class="site-brand__icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" role="img" focusable="false">
+          <path d="M12 2 4 6.5v11L12 22l8-4.5v-11L12 2Zm0 2.3 5.9 3.3L12 10.9 6.1 7.6 12 4.3Zm-6 5 6 3.4v7.2l-6-3.4V9.3Zm12 0v7.2l-6 3.4v-7.2l6-3.4Z"></path>
+        </svg>
+      </span>
+      <span class="site-brand__text">TechForge</span>
+    </a>
+    <nav class="site-nav" aria-label="Section navigation">
+      <a href="#roadmaps">Roadmaps</a>
+      <a href="#skills">Skills</a>
+      <a href="#careers">Careers</a>
+    </nav>
+  </header>
+
+  <div class="page-shell page-shell--home" id="top">
+    <!-- Hero area: introduces the catalog and explains the data-driven structure. -->
+    <header class="hero">
+      <div class="hero__content">
+        <p class="eyebrow" id="homeEyebrow">Microsoft Learn inspired roadmap library</p>
+        <h1 id="homeTitle">Microsoft Roadmaps</h1>
+        <p class="hero__lead" id="homeLead">Browse curated Microsoft learning paths for AI, cybersecurity, data science, and Azure.</p>
+      </div>
+    </header>
+
+    <main>
+      <!-- Section intro: keeps the landing page focused on the roadmap grid. -->
+      <section id="roadmaps" class="section-intro" aria-label="Roadmap catalog introduction">
+        <div>
+          <p class="section-label">Roadmaps</p>
+          <h2>Structured learning paths for modern tech careers</h2>
+        </div>
+      </section>
+
+      <!-- Dynamic roadmap grid populated by js/script.js. -->
+      <section id="roadmapGrid" class="roadmap-grid" aria-live="polite"></section>
+
+      <section id="skills" class="catalog-section" aria-labelledby="skillsTitle">
+        <div class="section-heading">
+          <p class="section-label">Skills</p>
+          <h2 id="skillsTitle">Skills across the learning paths</h2>
+        </div>
+        <div id="skillsGrid" class="detail-card-grid"></div>
+      </section>
+
+      <section id="careers" class="catalog-section" aria-labelledby="careersTitle">
+        <div class="section-heading">
+          <p class="section-label">Careers</p>
+          <h2 id="careersTitle">Career directions supported by the roadmaps</h2>
+        </div>
+        <div id="careersGrid" class="detail-card-grid"></div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Data comes first so the renderer can treat the catalog as the single source of truth. -->
+  <script src="data/roadmaps.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
